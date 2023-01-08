@@ -241,4 +241,5 @@ void KnightsTour::clear_screen() {
 		tile.lastVisitedTileIndex = -1;
 	}
 	KnightsTour::isFirstMoveMade = false;
+	KnightsTour::movesMade.clear();
 }

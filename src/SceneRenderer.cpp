@@ -79,6 +79,13 @@ void SceneRenderer::OnMouseDown(WPARAM btnState, int x, int y)
 		KnightsTour::make_move(KnightsTour::currentMoveItr);
 		LoadTiles();
 	}
+
+	if (KnightsTour::visitableTileExists == false) {
+		std::wstring controls = L"Nowhere to move from here.\n"
+			"Press U to undo your actions.\n"
+			"Press C to start over.";
+		MessageBox(nullptr, controls.c_str(), L"Controls", MB_OK);
+	}
 }
 
 void SceneRenderer::OnKeyUp(WPARAM button) {
